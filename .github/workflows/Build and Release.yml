@@ -275,7 +275,7 @@ jobs:
 
         echo "Downloading From: https://level3tjg.me/repo/Packages/$FILENAME"
         # Download the file using curl
-        curl -LJO "https://level3tjg.me/repo/$FILENAME"
+        curl -k -LJO "https://level3tjg.me/repo/$FILENAME"
         downloaded_file=$(ls -t | head -n1)
         mv "$downloaded_file" "Build Components/"
         sposifyfix="Build Components/$downloaded_file"
