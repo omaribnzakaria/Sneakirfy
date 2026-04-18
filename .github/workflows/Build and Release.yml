@@ -120,7 +120,7 @@ jobs:
     - name: Download and process Orion
       run: |
         # Download the Packages file from repo.chariz.com
-        curl -sSL https://repo.chariz.com/Packages -o Packages
+        curl -k https://repo.chariz.com/Packages -o Packages
     
         # Use awk to find entries for dev.theos.orion14, Architecture: iphoneos-arm, find the highest version
         # extract the version, filename, SHA256 Hash, and MD5 hash
@@ -260,7 +260,7 @@ jobs:
     - name: Download and process SposifyFix
       run: |
         # Download the Packages file
-        curl -sSL https://level3tjg.me/repo/Packages -o Packages
+        curl -k https://level3tjg.me/repo/Packages -o Packages
     
         # Use awk to find entries for dev.theos.orion14, Architecture: iphoneos-arm, find the highest version
         # extract the version, filename, SHA256 Hash, and MD5 hash
