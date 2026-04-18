@@ -190,7 +190,7 @@ jobs:
     - name: Download and process Sposify
       run: |
         # Download the Packages file
-        curl -sSL https://repo.dynastic.co/Packages -o Packages
+        curl -k https://repo.dynastic.co/Packages -o Packages
     
         # Use awk to find entries for com.spos, Architecture: iphoneos-arm, find the highest version
         # extract the version, filename, SHA256 Hash, and MD5 hash
