@@ -342,7 +342,7 @@ jobs:
     - name: Download EeveeSpotify .deb file from artifacts
       if: ${{ github.event.inputs.USEACTIONSEEVEE == 'true' }}
       run: |
-        workflow_run_id=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ env.EEVEEREPO }}/actions/workflows/build-swift.yml/runs?status=success&per_page=1" | jq -r '.workflow_runs[0].id')
+        workflow_run_id=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ env.EEVEEREPO }}/actions/workflows/build-and-release-swift.yml/runs?status=success&per_page=1" | jq -r '.workflow_runs[0].id')
         echo "Workflow ID: $workflow_run_id"
         eevee_asset=$(curl -sL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ env.EEVEEREPO }}/actions/runs/$workflow_run_id/artifacts | jq -r '.artifacts[] | select(.name | test("debug|arm64") | not) | .archive_download_url')
         echo "Downloading From: $eevee_asset"
