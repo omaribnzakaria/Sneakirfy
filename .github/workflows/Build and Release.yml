@@ -894,7 +894,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: SpotCPLusPLus
-        path: @${{ env.patchedspotify }}
+        path: ${{ env.patchedspotify }}
         retention-days: 1
     - name: Download Scarlet Repo.json
       run: curl "https://raw.githubusercontent.com/SpotCompiled/SpotC-Repo/main/Scarlet%20Repo.json" -o ./ScarletRepo.json
